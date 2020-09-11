@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Sweep" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Sweep" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Sweep/Imports">
+      <xsd:import schemaLocation="http://localhost:54341/Service1.svc?xsd=xsd0" namespace="Sweep" />
+      <xsd:import schemaLocation="http://localhost:54341/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Start_InputMessage">
+    <wsdl:part name="parameters" element="tns:Start" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Win_InputMessage">
+    <wsdl:part name="parameters" element="tns:Win" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Fail_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowLogin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowStart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowWin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowWin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowFail_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowFail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowLogout_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowLogout" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IService1">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="Sweep/IService1/Login" message="tns:IService1_Login_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Start">
+      <wsdl:input wsaw:Action="Sweep/IService1/Start" message="tns:IService1_Start_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Win">
+      <wsdl:input wsaw:Action="Sweep/IService1/Win" message="tns:IService1_Win_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Fail">
+      <wsdl:input wsaw:Action="Sweep/IService1/Fail" message="tns:IService1_Fail_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Logout">
+      <wsdl:input wsaw:Action="Sweep/IService1/Logout" message="tns:IService1_Logout_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowLogin">
+      <wsdl:output wsaw:Action="Sweep/IService1/ShowLogin" message="tns:IService1_ShowLogin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowStart">
+      <wsdl:output wsaw:Action="Sweep/IService1/ShowStart" message="tns:IService1_ShowStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowWin">
+      <wsdl:output wsaw:Action="Sweep/IService1/ShowWin" message="tns:IService1_ShowWin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowFail">
+      <wsdl:output wsaw:Action="Sweep/IService1/ShowFail" message="tns:IService1_ShowFail_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowLogout">
+      <wsdl:output wsaw:Action="Sweep/IService1/ShowLogout" message="tns:IService1_ShowLogout_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
